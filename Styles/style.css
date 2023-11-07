@@ -1,0 +1,11 @@
+.base {
+    background-color: rgb(201, 219, 224);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+}

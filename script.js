@@ -17,25 +17,19 @@ function add_task() {
         let new_li = document.createElement('li')
         new_li.innerText = new_task.value
 
-        // Create Buttons container
-        let btn_container = document.createElement('span')
-        btn_container.className = 'btn-container'
-
         // Create edit button
         let edit_btn = document.createElement('button')
         edit_btn.innerHTML = '&#128394;'
-        edit_btn.className = 'task_btn'
+        edit_btn.setAttribute('class', 'task_btn')
 
         //Edit task function
         edit_btn.addEventListener('click', function() {
             let edit_task = prompt("Edit Task: ", new_li.innerText)
             if(edit_task !== null) {
                 new_li.innerText = edit_task
-                btn_container.appendChild(edit_btn)
-                btn_container.appendChild(delete_btn)
-
+                new_li.appendChild(edit_btn)
+                new_li.appendChild(delete_btn)
                 todo_list.appendChild(new_li)
-                todo_list.append(btn_container)
             }
         })
 
@@ -49,11 +43,9 @@ function add_task() {
             new_li.remove()
         })
 
-        btn_container.appendChild(edit_btn)
-        btn_container.appendChild(delete_btn)
-
+        new_li.appendChild(edit_btn)
+        new_li.appendChild(delete_btn)
         todo_list.appendChild(new_li)
-        todo_list.append(btn_container)
 
         new_task.value = ''
     }

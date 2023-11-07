@@ -8,3 +8,35 @@
 h1 {
     color: white;
 }
+
+.lists-div {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 50px;
+}
+
+/* List buttons */
+ul li button {
+    margin-left: 10px; 
+}
+
+/* hovering list elt */
+ul li:hover {
+    background-color: #e0e0e0;
+    cursor: pointer; 
+}

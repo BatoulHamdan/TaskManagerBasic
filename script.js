@@ -1,7 +1,10 @@
-let add_btn = document.getElementById('add-task')
-add_btn.addEventListener('click', add_task)
-
+// Defining Lists
 let todo_list = document.getElementById('todo-list')
+let doing_list = document.getElementById('doing-list')
+
+// Defining Add button
+let add_btn = document.getElementById('add-task');
+add_btn.addEventListener('click', add_task);
 
 function add_task() {
     let new_task = document.getElementsByName('new-task')[0]
@@ -17,6 +20,19 @@ function add_task() {
         let new_li = document.createElement('li')
         new_li.innerText = new_task.value
 
+        // Create task div
+        let task_div = document.createElement('div')
+        task_div.className = 'task-div'
+
+        // Create checkbox
+        let task_checkbox = document.createElement('input');
+        task_checkbox.type = 'checkbox';
+        task_checkbox.setAttribute('class', 'task-checkbox');
+
+        // Create add button
+        let add_btn = document.getElementById('add-task')
+        add_btn.addEventListener('click', add_task)
+
         // Create edit button
         let edit_btn = document.createElement('button')
         edit_btn.innerHTML = '&#128394;'
@@ -27,9 +43,10 @@ function add_task() {
             let edit_task = prompt("Edit Task: ", new_li.innerText)
             if(edit_task !== null) {
                 new_li.innerText = edit_task
-                new_li.appendChild(edit_btn)
-                new_li.appendChild(delete_btn)
-                todo_list.appendChild(new_li)
+
+                task_div.appendChild(edit_btn)
+                task_div.appendChild(delete_btn)
+                todo_list.appendChild(task_div)
             }
         })
 
@@ -43,9 +60,16 @@ function add_task() {
             new_li.remove()
         })
 
-        new_li.appendChild(edit_btn)
-        new_li.appendChild(delete_btn)
-        todo_list.appendChild(new_li)
+        task_div.appendChild(task_checkbox)
+        task_div.appendChild(new_li)
+        task_div.appendChild(edit_btn)
+        task_div.appendChild(delete_btn)
+
+        new_li.addEventListener('click', function() {
+            doing_list.appendChild(new_li)
+        })
+        
+        todo_list.appendChild(task_div)
 
         new_task.value = ''
     }

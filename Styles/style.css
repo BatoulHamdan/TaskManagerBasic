@@ -1,42 +1,109 @@
 .base {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
 
-h1 {
-    color: white;
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.lists-div {
+h1 {
+    color: white;
+    font-style: oblique;
+}
+
+.forms {
+    width: 100%;
     display: flex;
     justify-content: center;
+    gap: 100px;
+}
+
+.new-task input[type="text"] {
+    width: 350px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+}
+
+.new-task button {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(247, 227, 230);
+    border: none;
+    border-radius: 10%;
+}
+
+.select-option select {
+    width: 350px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+}
+
+/* Designing Lists */
+.task-div {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 900px;
+    background-color: rgb(247, 227, 230);
+    align-items: center;
+    height: 50px;
+} 
+
+.task {
+    width: 300px;
 }
 
 ul {
-    list-style-type: none; 
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
-ul li {
-    margin: 10px 0;
-    padding: 10px;
-    
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
     gap: 50px;
 }
 
-/* List buttons */
-ul li button {
-    margin-left: 10px; 
+.todo-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* hovering list elt */
-ul li:hover {
-    background-color: #e0e0e0;
-    cursor: pointer; 
+li button {
+    background-color: transparent;
+    border: none;
+}
+
+/* Designing checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgb(201, 219, 224);
+    border-color: rgb(201, 219, 224);
+}
+
+input[type="checkbox"]:checked::before {
+    content: '\2713';
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    line-height: 20px;
 }

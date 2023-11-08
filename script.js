@@ -65,9 +65,9 @@ function add_task() {
         task_div.appendChild(edit_btn)
         task_div.appendChild(delete_btn)
 
-        new_li.addEventListener('click', function() {
-            doing_list.appendChild(new_li)
-        })
+        // new_li.addEventListener('click', function() {
+        //     doing_list.appendChild(task_div)
+        // })
         
         todo_list.appendChild(task_div)
 

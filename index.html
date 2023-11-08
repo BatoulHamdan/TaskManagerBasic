@@ -13,25 +13,52 @@
                 <h1>Task Tracker: Organize and Conquer!</h1>
             </div>
 
-            <!-- Adding New Task -->
-            <div class="new-task">
-                <input type="text" name="new-task" placeholder="Add new Task">
-                <button id="add-task">Add</button>
-            </div>
-            <!-- List of Tasks -->
-            <div class="lists-div">
-                <div class="todo-div">
-                    <ul id="todo-list">
-                        <!-- To do Tasks -->
-                    </ul>
+            <div class="forms">
+                <!-- Adding New Task -->
+                <div class="new-task">
+                    <input type="text" name="new-task" placeholder="Add new Task">
+                    <button id="add-task">Add</button>
                 </div>
 
-                <div class="doing-div">
-                    <ul id="doing-list">
-                        <!-- Doing Tasks -->
-                    </ul>
+                <div class="select-option">
+                    <!-- Select for filtering -->
+                    <select id="country" name="country">
+                        <option value="all-tasks">All Tasks</option>
+                        <option value="active-tasks">Active Tasks</option>
+                        <option value="completed-tasks">Completed Tasks</option>
+                    </select>
                 </div>
+                
             </div>
+
+            <!-- List of Tasks -->
+            <ul id="todo-list" class="todo-list"> 
+                <!-- To do Tasks -->
+                <li>
+                    <div class="task-div">
+                        <input type="checkbox">
+                        <div class="task">Finish JS hw</div> 
+                        <button>&#128394;</button>
+                        <button>&#10005;</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="task-div">
+                        <input type="checkbox">
+                        <div class="task">Finish JS hw</div> 
+                        <button>&#128394;</button>
+                        <button>&#10005;</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="task-div">
+                        <input type="checkbox">
+                        <div class="task">Finish JS hw</div> 
+                        <button>&#128394;</button>
+                        <button>&#10005;</button>
+                    </div>   
+                </li>
+            </ul>
         </div>
 
         <script src="./script.js"></script>

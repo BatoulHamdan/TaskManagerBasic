@@ -33,10 +33,30 @@ function add_task() {
         date.className = 'date'
         date.innerText = due_date.value
 
+        // Create comment div
+        let comment = document.createElement('div')
+        comment.className = 'comment'
+        comment.innerText = 'Unfinished'
+
         // Create checkbox
+        let checkbox_div = document.createElement('div');
+        checkbox_div.className = 'check';
         let task_checkbox = document.createElement('input');
         task_checkbox.type = 'checkbox';
-        task_checkbox.setAttribute('class', 'task-checkbox');
+        task_checkbox.className = 'checkbox';
+        checkbox_div.appendChild(task_checkbox)
+
+        // Set task finished when clicked on checkbox
+        task_checkbox.addEventListener('change', function() {
+            if (task_checkbox.checked) {
+                comment.innerText = 'Finished';
+
+            } 
+            else {
+                comment.innerText = 'Unfinished';
+            }
+        });
+
 
         // Create edit button
         let edit_btn = document.createElement('button')
@@ -65,12 +85,14 @@ function add_task() {
 
         // Set task active when clicking on it
         new_li.addEventListener('click', function() {
-            
+
         })
 
-        task_div.appendChild(task_checkbox)
+
+        task_div.appendChild(checkbox_div)
         task_div.appendChild(task)
         task_div.appendChild(date)
+        task_div.appendChild(comment)
         task_div.appendChild(edit_btn)
         task_div.appendChild(delete_btn)
         

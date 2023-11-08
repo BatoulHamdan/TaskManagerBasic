@@ -7,6 +7,7 @@ add_btn.addEventListener('click', add_task);
 
 function add_task() {
     let new_task = document.getElementsByName('new-task')[0]
+    let due_date = document.getElementsByName('due-date')[0]
 
     // Check is added task is empty
     if(new_task.value.length === 0) {
@@ -27,6 +28,11 @@ function add_task() {
         task.className = 'task'
         task.innerText = new_task.value
 
+        // Create date div
+        let date = document.createElement('div')
+        date.className = 'date'
+        date.innerText = due_date.value
+
         // Create checkbox
         let task_checkbox = document.createElement('input');
         task_checkbox.type = 'checkbox';
@@ -39,8 +45,12 @@ function add_task() {
         //Edit task function
         edit_btn.addEventListener('click', function() {
             let edit_task = prompt("Edit Task: ", task.innerText)
+            let edit_date = prompt("Edit Date: ", date.innerText)
             if(edit_task !== null) {
                 task.innerText = edit_task
+            }
+            if(edit_date !== null) {
+                date.innerText = edit_date
             }
         })
 
@@ -53,8 +63,14 @@ function add_task() {
             task_div.remove()
         })
 
+        // Set task active when clicking on it
+        new_li.addEventListener('click', function() {
+            
+        })
+
         task_div.appendChild(task_checkbox)
         task_div.appendChild(task)
+        task_div.appendChild(date)
         task_div.appendChild(edit_btn)
         task_div.appendChild(delete_btn)
         
@@ -62,5 +78,6 @@ function add_task() {
         todo_list.appendChild(new_li)
 
         new_task.value = ''
+        due_date.value = ''
     }
 }

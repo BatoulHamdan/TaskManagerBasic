@@ -1,48 +1,43 @@
-.base {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.heading {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 h1 {
-    color: white;
     font-style: oblique;
 }
 
-.forms {
+.new-task {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 100px;
+    padding: 20px;
 }
 
-.new-task input[type="text"] {
-    width: 350px;
+.new-task input {
+    width: 25%;
     height: 40px;
     font-size: 16px;
     border: none;
+    text-align: center;
+    background-color: rgb(247, 227, 230);
 }
 
 .new-task button {
-    width: 100px;
+    width: 40px;
     height: 40px;
     background-color: rgb(247, 227, 230);
     border: none;
-    border-radius: 10%;
+    border-radius: 50%;
+}
+
+.select-option {
+    width: 100%;
 }
 
 .select-option select {
-    width: 350px;
+    width: 25%;
     height: 40px;
     font-size: 16px;
     border: none;
+    text-align: center;
+    background-color: rgb(247, 227, 230);
 }
 
 /* Designing Lists */
@@ -50,25 +45,34 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 50px;
-    width: 900px;
+    width: 100%; 
+    padding: 20px;
     background-color: rgb(247, 227, 230);
     align-items: center;
     height: 50px;
 } 
 
 .task {
-    width: 500px;
+    width: 25%; 
 }
 
+.date {
+    width: 25%; 
+}
+
+.check {
+    width: 25%;
+}
+ 
 ul {
     list-style: none;
+    width: 100%;
 }
 
 li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    gap: 50px;
 }
 
 .todo-div {
@@ -77,9 +81,14 @@ li {
     align-items: center;
 }
 
+.comment {
+    width: 20%;
+}
+
 li button {
     background-color: transparent;
     border: none;
+    width: 5%;
 }
 
 /* Designing checkbox */

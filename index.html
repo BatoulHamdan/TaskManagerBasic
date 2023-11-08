@@ -9,17 +9,15 @@
         <!-- Div for the whole Page  -->
         <div class="base">
             <!--  Title -->
+            
             <div class="heading">
                 <h1>Task Tracker: Organize and Conquer!</h1>
-            </div>
-
-            <div class="forms">
                 <!-- Adding New Task -->
                 <div class="new-task">
                     <input type="text" name="new-task" placeholder="Add new Task">
-                    <button id="add-task">Add</button>
+                    <input type="date" name="due-date">
+                    <button id="add-task">+</button>
                 </div>
-
                 <div class="select-option">
                     <!-- Select for filtering -->
                     <select id="country" name="country">
@@ -27,40 +25,39 @@
                         <option value="active-tasks">Active Tasks</option>
                         <option value="completed-tasks">Completed Tasks</option>
                     </select>
-                </div>
-                
+                </div>    
             </div>
 
+            
             <!-- List of Tasks -->
             <ul id="todo-list" class="todo-list"> 
+                <!-- Header title -->
+                <li>
+                    <div class="task-div title">
+                        <div class="check"><h3>Completed</h3></div>
+                        <div class="task"><h3>Task Name</h3></div> 
+                        <div class="date"><h3>Due Date</h3></div>
+                        <div class="comment"><h3>Comment</h3></div>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </li>
+
                 <!-- To do Tasks -->
                 <li>
                     <div class="task-div">
-                        <input type="checkbox">
+                        <div class="check"><input type="checkbox"></div>
                         <div class="task">Finish JS hw</div> 
+                        <div class="date">2023-11-11</div>
+                        <div class="comment">Active</div>
                         <button>&#128394;</button>
                         <button>&#10005;</button>
                     </div>
                 </li>
-                <li>
-                    <div class="task-div">
-                        <input type="checkbox">
-                        <div class="task">Finish JS hw</div> 
-                        <button>&#128394;</button>
-                        <button>&#10005;</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="task-div">
-                        <input type="checkbox">
-                        <div class="task">Finish JS hw</div> 
-                        <button>&#128394;</button>
-                        <button>&#10005;</button>
-                    </div>   
-                </li>
+
+                
             </ul>
         </div>
-
         <script src="./script.js"></script>
     </body>
 </html>

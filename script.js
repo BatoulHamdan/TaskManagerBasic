@@ -57,7 +57,6 @@ function add_task() {
             }
         });
 
-
         // Create edit button
         let edit_btn = document.createElement('button')
         edit_btn.innerHTML = '&#128394;'
@@ -84,11 +83,18 @@ function add_task() {
         })
 
         // Set task active when clicking on it
-        new_li.addEventListener('click', function() {
+        task.addEventListener('click', function() {
+            
+            new_li.classList.toggle('clicked');
 
+            if(comment.innerText === 'Active') {
+                comment.innerText = 'Unactive'
+            }
+            else {
+                comment.innerText = 'Active'
+            }
         })
-
-
+        
         task_div.appendChild(checkbox_div)
         task_div.appendChild(task)
         task_div.appendChild(date)

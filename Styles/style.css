@@ -52,6 +52,14 @@ h1 {
     height: 50px;
 } 
 
+li.clicked {
+    border: 2px solid black; 
+}
+
+li:hover {
+    cursor: pointer;
+}
+
 .task {
     width: 25%; 
 }

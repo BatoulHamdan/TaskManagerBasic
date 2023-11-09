@@ -1,5 +1,6 @@
 // Defining Lists
 let todo_list = document.getElementById('todo-list')
+let doing_list = document.getElementById('doing-list')
 
 // Defining Add button
 let add_btn = document.getElementById('add-task');
@@ -51,7 +52,6 @@ function add_task() {
         task_checkbox.addEventListener('change', function() {
             if (task_checkbox.checked) {
                 comment.innerText = 'Completed';
-
             } 
             else {
                 comment.innerText = 'Uncompleted';
@@ -80,19 +80,51 @@ function add_task() {
 
         // Delete task function
         delete_btn.addEventListener('click', function() {
-            task_div.remove()
+            new_li.remove()
         })
 
         // Set task active when clicking on it
         task.addEventListener('click', function() {
-            
-            new_li.classList.toggle('clicked');
+            if(task_checkbox.checked === false) {
+                if(comment.innerText === 'Active') {
+                    comment.innerText = 'Inactive'
+                }
+                else {
+                    comment.innerText = 'Active'
 
-            if(comment.innerText === 'Active') {
-                comment.innerText = 'Inactive'
-            }
-            else {
-                comment.innerText = 'Active'
+                    // Add task to doing list
+                    let doing_div = document.createElement('div')
+                    doing_div.className = 'doing-div'
+
+                    let doing_checkbox_div = document.createElement('div')
+                    doing_checkbox_div.className = 'check'
+                    let doing_checkbox = document.createElement('input');
+                    doing_checkbox.type = 'checkbox'
+                    doing_checkbox_div.appendChild(doing_checkbox)
+
+                    // Set task finished when clicked on checkbox
+                    doing_checkbox.addEventListener('change', function() {
+                        if (doing_checkbox.checked) {
+                            comment.innerText = 'Completed'
+                            task_checkbox.checked = true
+                            doing_div.remove()
+                        } 
+                        else {
+                            comment.innerText = 'Uncompleted'
+                        }
+                    });
+
+                    let doing_li = document.createElement('li')
+
+                    let doing_task = document.createElement('div')
+                    doing_task.className = 'doing-task'
+                    doing_task.innerText = task.innerText;
+
+                    doing_div.appendChild(doing_checkbox_div)
+                    doing_div.appendChild(doing_task)
+                    doing_li.appendChild(doing_div)
+                    doing_list.appendChild(doing_li)
+                }
             }
         })
         
@@ -123,16 +155,20 @@ filterSelect.addEventListener('change', function() {
 
         if (selectedFilter === 'all-tasks') {
             task_div.style.visibility = 'visible';
-        } else if (selectedFilter === 'active-tasks') {
+        } 
+        else if (selectedFilter === 'active-tasks') {
             if (comment === 'Active') {
                 task_div.style.visibility = 'visible';
-            } else {
+            } 
+            else {
                 task_div.style.visibility = 'hidden';
             }
-        } else if (selectedFilter === 'completed-tasks') {
+        } 
+        else if (selectedFilter === 'completed-tasks') {
             if (comment === 'Finished') {
                 task_div.style.visibility = 'visible';
-            } else {
+            } 
+            else {
                 task_div.style.visibility = 'hidden';
             }
         }

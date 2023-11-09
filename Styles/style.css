@@ -42,7 +42,22 @@ h1 {
     background-color: rgb(201, 219, 224);
 }
 
+/* Lists div */
+.lists-div {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+
 /* Todo List */
+.todo-list {
+    list-style: none;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .task-div, .todo-title {
     display: flex;
     justify-content: center;
@@ -55,40 +70,34 @@ h1 {
     border-radius: 25px;
 } 
 
-li.clicked {
-    border: 2px solid black; 
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
-
 li:hover {
     cursor: pointer;
 }
-
-.task {
-    width: 25%; 
+li button {
+    background-color: transparent;
+    border: none;
+    width: 5%;
 }
 
+.task {
+    width: 40%; 
+}
 .date {
     width: 25%; 
 }
-
 .check {
     width: 25%;
 }
-
-.lists-div {
-    width: 100%;
-    display: flex;
-    gap: 50px;
-}
- 
-.todo-list {
-    list-style: none;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.comment {
+    width: 20%;
 }
 
+/* Doing List */
 .doing-list {
     list-style: none;
     width: 40%;
@@ -102,28 +111,6 @@ li:hover {
     display: flex;
     gap: 50px;
     padding: 10px;
-}
-
-li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.todo-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.comment {
-    width: 20%;
-}
-
-li button {
-    background-color: transparent;
-    border: none;
-    width: 5%;
 }
 
 /* Designing checkbox */
@@ -151,3 +138,4 @@ input[type="checkbox"]:checked::before {
     color: white;
     line-height: 20px;
 }
+

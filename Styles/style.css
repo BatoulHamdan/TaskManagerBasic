@@ -1,5 +1,10 @@
 h1 {
     font-style: oblique;
+    background-color: rgb(201, 219, 224);
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid #333;
+    padding: 0px 20px;
 }
 
 /* Add new task form */
@@ -18,6 +23,7 @@ h1 {
     text-align: center;
     background-color: rgb(201, 219, 224);
     border-radius: 25px;
+    border: 2px solid #333;
 }
 
 .new-task button {
@@ -26,6 +32,7 @@ h1 {
     background-color: rgb(201, 219, 224);
     border: none;
     border-radius: 50%;
+    border: 2px solid #333;
 }
 
 /* Filter form */
@@ -43,6 +50,7 @@ h1 {
     align-self: self-start;
     background-color: rgb(201, 219, 224);
     border-radius: 25px;
+    border: 2px solid #333;
 }
 
 /* Lists div */
@@ -76,6 +84,9 @@ li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    border: 2px solid #333;
+    border-radius: 25px;
+    background-color: rgb(201, 219, 224);
 }
 li:hover {
     cursor: pointer;
@@ -105,9 +116,7 @@ li button {
     width: 40%;
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
     border-radius: 25px;
-    background-color: rgb(201, 219, 224);
 }
 
 .doing-div, .doing-title {

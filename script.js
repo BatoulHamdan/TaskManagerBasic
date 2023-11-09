@@ -22,6 +22,7 @@ function add_task() {
         // Create task div
         let task_div = document.createElement('div')
         task_div.className = 'task-div'
+        task_div.draggable = true
 
         // Create task container div
         let task = document.createElement('div')
@@ -49,11 +50,11 @@ function add_task() {
         // Set task finished when clicked on checkbox
         task_checkbox.addEventListener('change', function() {
             if (task_checkbox.checked) {
-                comment.innerText = 'Finished';
+                comment.innerText = 'Completed';
 
             } 
             else {
-                comment.innerText = 'Unfinished';
+                comment.innerText = 'Uncompleted';
             }
         });
 
@@ -88,7 +89,7 @@ function add_task() {
             new_li.classList.toggle('clicked');
 
             if(comment.innerText === 'Active') {
-                comment.innerText = 'Unactive'
+                comment.innerText = 'Inactive'
             }
             else {
                 comment.innerText = 'Active'
@@ -109,3 +110,31 @@ function add_task() {
         due_date.value = ''
     }
 }
+
+// Add an event listener for change event on the filter select
+let filterSelect = document.getElementById('filter');
+filterSelect.addEventListener('change', function() {
+    let selectedFilter = filterSelect.value;
+    let task_divs = document.getElementsByClassName('task-div');
+
+    for (let i = 0; i < task_divs.length; i++) {
+        let task_div = task_divs[i];
+        let comment = task_div.getElementsByClassName('comment')[0].innerText;
+
+        if (selectedFilter === 'all-tasks') {
+            task_div.style.visibility = 'visible';
+        } else if (selectedFilter === 'active-tasks') {
+            if (comment === 'Active') {
+                task_div.style.visibility = 'visible';
+            } else {
+                task_div.style.visibility = 'hidden';
+            }
+        } else if (selectedFilter === 'completed-tasks') {
+            if (comment === 'Finished') {
+                task_div.style.visibility = 'visible';
+            } else {
+                task_div.style.visibility = 'hidden';
+            }
+        }
+    }
+});

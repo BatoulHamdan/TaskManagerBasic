@@ -1,5 +1,4 @@
 h1 {
-    font-style: oblique;
     background-color: rgb(201, 219, 224);
     height: 40px;
     border-radius: 25px;
@@ -107,7 +106,7 @@ li button {
     width: 25%;
 }
 .comment {
-    width: 20%;
+    width: 25%;
 }
 
 /* Doing List */

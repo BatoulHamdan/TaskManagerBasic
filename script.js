@@ -20,7 +20,6 @@ function add_task() {
         // Add new task to the todo list
         let new_li = document.createElement('li')
         new_li.className = 'task-li'
-        new_li.draggable = true
 
         // Create task div
         let task_div = document.createElement('div')
@@ -40,7 +39,7 @@ function add_task() {
         // Create comment div
         let comment = document.createElement('div')
         comment.className = 'comment'
-        comment.innerText = 'Unfinished'
+        comment.innerText = 'Uncompleted'
 
         // Create checkbox
         let checkbox_div = document.createElement('div')
@@ -158,7 +157,7 @@ function add_task() {
                 }
             }
         });
-        
+
         task_div.appendChild(checkbox_div)
         task_div.appendChild(task)
         task_div.appendChild(date)
@@ -167,6 +166,7 @@ function add_task() {
         task_div.appendChild(delete_btn)
         
         new_li.appendChild(task_div)
+
         todo_list.appendChild(new_li)
 
         new_task.value = ''
@@ -180,7 +180,7 @@ function add_task() {
 let filterSelect = document.getElementById('filter');
 filterSelect.addEventListener('change', function() {
     let selectedFilter = filterSelect.value;
-    let task_divs = document.getElementsByClassName('task-div');
+    let task_divs = document.getElementsByClassName('task-li');
 
     for (let i = 0; i < task_divs.length; i++) {
         let task_div = task_divs[i]
@@ -240,4 +240,4 @@ function sort_by_due_date() {
     tasks.forEach((task) => {
         taskList.appendChild(task.element)
     })
-}
+}       
